@@ -18,9 +18,16 @@ function salvarUser() {
         dadosLista.push(nomeUser);
         crialista();
         document.getElementById("nomeUser").value = '';
+    }else{
+
+        alert("Digite um nome");
+        document.getElementById("nomeUser").focus();
+    }
+
+        
         //console.log(dadosLista)
     }
-}
+
 function crialista() {
     let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
     for (let i = 0; i <= (dadosLista.length - 1); i++) {
@@ -29,7 +36,7 @@ function crialista() {
         document.getElementById('tabela').innerHTML = tabela;
     }
 }
-//Função para a editar o array
+//Função para editar o array
 
 function editar(i) {
     document.getElementById('nomeUser').value = dadosLista[(i - 1)];
